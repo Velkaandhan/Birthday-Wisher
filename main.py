@@ -3,11 +3,13 @@ import csv
 import datetime as dt
 import random
 import smtplib
+import os
+MY_EMAIL = os.environ.get("MY_EMAIL")
+MY_PASSWORD = os.environ.get("MY_PASSWORD")
 text_file = ["letter_templates\letter_1.txt","letter_templates\letter_2.txt","letter_templates\letter_3.txt"]
 date = dt.datetime.now()
 current_month = date.month
 current_day = date.day
-MY_EMAIL = "veltherebel@gmail.com"
 
 with open("birthdays.csv", 'r') as file:
     lines = csv.reader(file)
